@@ -1,11 +1,8 @@
-import asyncio
-
-
-async def get_primes(number_one: int, number_two: int):
+def get_primes(number_one: int, number_two: int):
     """Função que retorna todos números primos em um intervalo
     """
     if number_one < 0 or number_two < 0:
-        return {'status': 0, 'message': 'Somente valido valores naturais'}
+        return {'status': 0, 'message': 'Somente válido valores naturais'}
     if number_one >= number_two:
         largest = number_one
         smallest = number_two
@@ -48,11 +45,3 @@ def calculate_primes(largest: int, smallest: int):
             if add:
                 result.append(n)
     return result
-
-def verify_numbers(number_one: int, number_two: int):
-    try:
-        number_one = int(number_one)
-        number_two = int(number_two)
-    except ValueError:
-        return False
-    return True
