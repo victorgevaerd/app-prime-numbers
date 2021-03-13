@@ -5,23 +5,23 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-com_erro = False
+with_error = False
 
-if getenv('PORTA') is None:
-    print('Variável PORTA não definida!. Defina no arquivo servidor/.env')
-    print('Exemplo: PORTA=3000')
-    com_erro = True
+if getenv('PORT') is None:
+    print('Variável "PORT" não definida!. Defina no arquivo servidor/.env')
+    print('Exemplo: PORT=3000')
+    with_error = True
 
 if getenv('DEBUG') is None:
-    print('Variável DEBUG não definida!. Defina no arquivo servidor/.env')
+    print('Variável "DEBUG" não definida!. Defina no arquivo servidor/.env')
     print('Exemplo: DEBUG=True')
-    com_erro = True
+    with_error = True
 
-if com_erro:
+if with_error:
     raise SystemExit('Variáveis de ambiente não definidas!')
 
 try:
-    PORTA = int(getenv('PORTA'))
+    PORT = int(getenv('PORT'))
 except ValueError:
     raise SystemExit('Variável PORTA deve ser um número natural!')
 try:
