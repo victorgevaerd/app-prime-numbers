@@ -17,7 +17,7 @@ class PrimeHistory:
 
 class PrimesDAO:
     def __init__(self):
-        self.__data_source = 'servidor\primes.pkl'
+        self.__data_source = 'primes.pkl'
         self.__object_cache = []
         try:
             self.__load()

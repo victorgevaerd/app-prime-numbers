@@ -1,16 +1,27 @@
-def get_primes(number_one: int, number_two: int):
-    """Função que retorna todos números primos em um intervalo
-    """
+from persistence import PrimesDAO, PrimeHistory
+
+prime_dao = PrimesDAO()
+
+
+def get_primes(number_one, number_two):
+    try:
+        number_one = int(number_one)
+        number_two = int(number_two)
+    except ValueError:
+        return {'status': 0, 'message': 'Valores inválidos'}
     if number_one < 0 or number_two < 0:
         return {'status': 0, 'message': 'Somente válido valores naturais'}
-    if number_one >= number_two:
-        largest = number_one
-        smallest = number_two
-    else:
-        largest = number_two
-        smallest = number_one
-    primes = calculate_primes(largest=largest, smallest=smallest)
+    primes = calculate_primes(largest=max(number_one, number_two),
+                              smallest=min(number_one, number_two))
+    prime_history = PrimeHistory(number_one, number_two)
+    prime_dao.add(prime_history)
     return primes
+
+def get_history():
+    result = []
+    for obj in prime_dao.get_all():
+        result.append({'number_one': obj.number_one, 'number_two': obj.number_two})
+    return result
 
 def calculate_primes(largest: int, smallest: int):
     """Função que utiliza o 'Crivo de Eratóstenes' para descobrir os
