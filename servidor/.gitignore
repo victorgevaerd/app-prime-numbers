@@ -1,3 +1,4 @@
 myenv
 .env
 primes.pkl
+__pycache__
