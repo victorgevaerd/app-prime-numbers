@@ -8,7 +8,9 @@ No lado front-end, mostrar formas de uso da biblioteca [Material-UI](https://mat
 
 ## Tecnologias utilizadas
 
-Texto
+Flask:
+
+Pickle: serialização
 
 ## Instruções
 
@@ -18,17 +20,16 @@ Depois de baixar/clonar o repositório, entre no diretório **cliente** pelo con
 
 para instalar os pacotes JavaScript utilizados no lado cliente da aplicação.
 
-Após isso, entre no diretório **servidor** e digite
+Após isso, entre no diretório **server** e digite
 
 `pip install -r requirements.txt`
 
 para instalar os pacotes Python utilizados no lado servidor da aplicação.
 
-No mesmo diretório **servidor**, crie o arquivo **.env** e adicione o seguinte conteúdo:
+No mesmo diretório **server**, crie o arquivo **.env** e adicione o seguinte conteúdo:
 
 ```bash
 PORTA=3000
-
 DEBUG=False
 ```
 
@@ -40,11 +41,11 @@ Ao desenvolver a aplicação digite o comando
 
 `npm start`
 
-no diretório **cliente** e digite o comando
+no diretório **client** e digite o comando
 
 `py src\app.py`
 
-no diretório **servidor**. Utilize a aplicação acessando `http://127.0.0.1:3000`
+no diretório **server**. Utilize a aplicação acessando `http://127.0.0.1:3000`
 
 ### Em Produção
 
@@ -52,8 +53,8 @@ Para utilizar a aplicação em produção, digite o comando
 
 `npm run build`
 
-no diretório **cliente**.
+no diretório **client**.
 
-Em seguida, para colocar a aplicação no ar, entre no diretório **servidor** e digite
+Em seguida, para colocar a aplicação no ar, entre no diretório **server** e digite
 
 `py src\app.py`
