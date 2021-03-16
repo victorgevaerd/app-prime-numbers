@@ -8,7 +8,7 @@ No lado front-end, mostrar formas de uso da biblioteca [Material-UI](https://mat
 
 ## Tecnologias utilizadas
 
-Flask:
+Flask: oioi
 
 Pickle: serialização
 
