@@ -4,17 +4,33 @@ A aplicação permite que o usuário submeta dois números para visualizar todos
 
 ## Objetivo
 
-No lado front-end, mostrar formas de uso da biblioteca [Material-UI](https://material-ui.com/). No lado back-end, mostrar o uso da biblioteca [Mongoose](https://mongoosejs.com/) para simplificar o acesso aos dados armazenados em uma base de dados MongoDB.
+Solucionar o desafio proposto pelo Laboratório Bridge ao processo seletivo de desenvolvedores _fullstack_: "Desafio Dev Web Full Stack".
 
 ## Tecnologias utilizadas
 
-Flask: oioi
+### Backend
 
-Pickle: serialização
+Como interface para o _web server_ criado foi utilizado o [Flask](https://palletsprojects.com/p/flask/), um _framework_ para aplicações web bem conhecido para Python. Também foi utilizado a extensão [Flask-Cors](https://flask-cors.readthedocs.io/en/latest/), para permitir acesso a [api](https://www.techtudo.com.br/listas/2020/06/o-que-e-api-e-para-que-serve-cinco-perguntas-e-respostas.ghtml) de diferentes origens.
+
+Para a permanêcia dos registros de histórico de consultas, foi utilizado o módulo [Pickle](https://docs.python.org/3/library/pickle.html) para serializar e desserializar estruturas de objetos Python para arquivos binário.
+
+Por fim, para manipular variáveis de ambiente, foi utilizado o [python-dotenv](https://pypi.org/project/python-dotenv/).
+
+### Frontend
+
+A construção da interface de usuário foi realizada utilizando a biblioteca javascript [React](https://pt-br.reactjs.org/), pois permite a criação de _UIs_ de forma simples e eficiente. Também, foi utilizado a biblioteca de componentes css [Bootswatch](https://bootswatch.com/), que disponibiliza vários temas [Bootstrap](https://getbootstrap.com.br/) de graça.
+
+Para comunicação com o lado _backend_, foi utilizado o [axios](https://www.npmjs.com/package/axios) que é um cliente HTTP baseado em Promises para realizar requisições.
 
 ## Instruções
 
-Depois de baixar/clonar o repositório, entre no diretório **cliente** pelo console e digite
+### Pré requisitos
+
+Para rodar esta aplicação é necessário que a máquina possua o [Python 3](https://python.org.br/instalacao-windows/) e o [Node.js](https://medium.com/@adsonrocha/como-instalar-o-node-js-no-windows-10-cf2bd460b8a8).
+
+### Instalação da aplicação
+
+Depois de baixar/clonar o repositório, entre no diretório **cliente** pelo console/prompt de comandos e digite
 
 `npm install`
 
@@ -33,28 +49,30 @@ PORTA=5000
 DEBUG=False
 ```
 
-Para rodar a aplicação em modo desenvolvimento, utilize o valor de "DEBUG" igual a "True" e para o modo produção use "False".
+> Para rodar a aplicação em modo desenvolvimento, utilize o valor de "DEBUG" igual a "True" e para o modo produção use "False".
 
 ### Durante o Desenvolvimento
 
-Ao desenvolver a aplicação digite o comando
+Ao desenvolver a aplicação digite no console/prompt de comandos o comando
 
 `npm start`
 
-no diretório **client** e digite o comando
+no diretório **client** e, no diretório **server**, digite o comando
 
 `py src\app.py`
 
-no diretório **server**. Utilize a aplicação acessando `http://127.0.0.1:3000`
+A partir de então a aplicação estará disponível, para acessar, use o navegador e digite o endereço https://localhost:3000.
 
 ### Em Produção
 
-Para utilizar a aplicação em produção, digite o comando
+Para gerar a versão em produção do lado cliente entre no diretório **client** e no console/prompt de comandos digite
 
 `npm run build`
 
-no diretório **client**.
+Em seguida, para executar a aplicação em modo produção digite
 
-Em seguida, para colocar a aplicação no ar, entre no diretório **server** e digite
+`node build\app.js`
+
+Por fim, entre no diretório **server** e digite
 
 `py src\app.py`

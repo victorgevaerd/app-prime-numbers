@@ -1,6 +1,8 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "app-prime-numbers-client",
+  "version": "1.0.0",
+  "author": "Victor Gevaerd Luiz",
+  "description": "Aplicação para consulta de números primos em dado intervalo",
   "private": true,
   "dependencies": {
     "axios": "^0.21.1",

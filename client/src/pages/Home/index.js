@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {AiOutlineCloseCircle} from 'react-icons/ai'
 
-import api from '../../api'
+import api from '../../api';
 import './styles.css';
 
 import Card from '../../components/Card';

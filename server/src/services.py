@@ -45,14 +45,21 @@ def calculate_primes(largest: int, smallest: int):
             i += 1
 
         # listando todos números primos no intervalo definido
-        min_number = smallest if smallest % 2 != 0 else smallest+1
+        if smallest <= 2:
+            result.append(2)
+            smallest = 2
+        if smallest % 2 != 0:
+            min_number = smallest
+        else:
+            min_number = smallest+1
         for n in range(min_number, largest+1, 2):
             add = True
             i = 0
             while add and i < len(dividers)-1:
-                if n % dividers[i] == 0:  # verifica se é divisível
+                if n != dividers[i] and n % dividers[i] == 0:  # verifica se é divisível
                     add = False
                 i += 1
+                # print(n, add)
             if add:
                 result.append(n)
     return result
