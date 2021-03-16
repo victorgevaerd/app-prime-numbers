@@ -17,20 +17,39 @@ const Home = () => {
 
   const onSearchPrimeNumbers = async () => {
     const data = {
-      number_one: Number(numberOne),
-      number_two: Number(numberTwo),
+      number_one: numberOne,
+      number_two: numberTwo,
     };
-
+    if (!validate()) {
+      return false;
+    }
     const response = await api.post(`primos`, data);
-    const arrayToString = response.data.join(', ');
-    setPrimeNumbers(arrayToString);
-    setResultVisible(true);
+    if (Array.isArray(response.data)) {
+      const arrayToString = response.data.join(', ');
+      setPrimeNumbers(arrayToString);
+      setResultVisible(true)
+    } else {
+      alert(response.data.message);
+    }
   }
 
   const onSearchHistory = async () => {
     const response = await api.get(`historico`);
     setHistory(response.data);
     setHistoryVisible(true);
+  }
+
+  const validate = () => {
+    function isNumeric(value) {
+      return /^\d+$/.test(value);
+    }
+
+    if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
+      alert('Favor informar somente números');
+      return false;
+    }
+
+    return true;
   }
 
   return (
@@ -41,12 +60,13 @@ const Home = () => {
       </p>
       <hr className="my-4" />
 
-      <Card title="Informe o intervalo">
+      <Card title="Informe o intervalo" isVisible={false}>
         <div className="row">
           <div className="col-md-5">
             <FormGroup htmlFor="inputN1" label="Primeiro Número:">
               <input 
               type="text"
+              maxLength="6"
               className="form-control" 
               id="inputN1"
               value={numberOne}
@@ -57,7 +77,8 @@ const Home = () => {
           <div className="col-md-5">
             <FormGroup htmlFor="inputN2" label="Segundo Número:">
               <input 
-              type="text" 
+              type="text"
+              maxLength="6"
               className="form-control" 
               id="inputN2"
               value={numberTwo}
@@ -77,10 +98,7 @@ const Home = () => {
 
       {
         resultVisible ? 
-          <Card title="Resultado">
-            <a className="closeButton" onClick={() => setResultVisible(false)}>
-              <AiOutlineCloseCircle color="red" size={25}/>
-            </a>
+          <Card title="Resultado" onClick={() => setResultVisible(false)}>
             <div>{primeNumbers}</div>
           </Card>
         :
@@ -95,10 +113,7 @@ const Home = () => {
 
       {
         historyVisible ?
-          <Card title="Histórico de consultas">
-            <a className="closeButtonH" onClick={() => setHistoryVisible(false)}>
-              <AiOutlineCloseCircle color="red" size={25}/>
-            </a>
+          <Card title="Histórico de consultas" onClick={() => setHistoryVisible(false)}>
             <div>
               {history.map((h, index) => {
                 return(

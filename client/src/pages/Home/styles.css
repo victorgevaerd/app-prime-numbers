@@ -1,5 +1,5 @@
 .container {
-    margin-top: 40px;
+    margin-top: 10px;
     height: auto;
   }
   
@@ -14,15 +14,6 @@
 
   .closeButton {
     position: absolute;
-    top: 5%;
     right: 1%;
     cursor: pointer;
   }
-
-  .closeButtonH {
-    position: absolute;
-    top: 1%;
-    right: 1%;
-    cursor: pointer;
-  }
-  
