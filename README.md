@@ -1,4 +1,4 @@
-# Laboratório Bridge - Processo Seletivo :: Desafio Dev Web Full Stack
+# Laboratório Bridge - Processo Seletivo : Desafio Dev Web Full Stack
 
 A aplicação permite que o usuário submeta dois números para visualizar todos primos presentes no intervalo definido e, ao mesmo tempo, armazena o histórico dos números submetidos. Para descobrir quais números são primos no intervalo, o algoritmo foi baseado no [Crivo de Eratóstenes](https://pt.wikipedia.org/wiki/Crivo_de_Erat%C3%B3stenes).
 
@@ -29,7 +29,7 @@ para instalar os pacotes Python utilizados no lado servidor da aplicação.
 No mesmo diretório **server**, crie o arquivo **.env** e adicione o seguinte conteúdo:
 
 ```bash
-PORTA=3000
+PORTA=5000
 DEBUG=False
 ```
 

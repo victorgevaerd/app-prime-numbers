@@ -1,0 +1,28 @@
+.container {
+    margin-top: 40px;
+    height: auto;
+  }
+  
+  .searchButton {
+    margin-top: 35px;
+  }
+  
+  .historyLink {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    cursor: pointer;
+  }
+
+  .closeButtonH {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    cursor: pointer;
+  }
+  
