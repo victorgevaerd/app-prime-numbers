@@ -51,28 +51,14 @@ DEBUG=False
 
 > Para rodar a aplicação em modo desenvolvimento, utilize o valor de "DEBUG" igual a "True" e para o modo produção use "False".
 
-### Durante o Desenvolvimento
+### Executar aplicação
 
-Ao desenvolver a aplicação digite no console/prompt de comandos o comando
+Para executar a aplicação digite no console/prompt de comandos o comando
 
 `npm start`
 
 no diretório **client** e, no diretório **server**, digite o comando
 
-`python src\app.py`
+`python3 src\app.py`
 
-A partir de então a aplicação estará disponível, para acessar, use o navegador e digite o endereço https://localhost:3000.
-
-### Em Produção
-
-Para gerar a versão em produção do lado cliente entre no diretório **client** e no console/prompt de comandos digite
-
-`npm run build`
-
-Em seguida, para executar a aplicação em modo produção digite
-
-`node build\app.js`
-
-Por fim, entre no diretório **server** e digite
-
-`python src\app.py`
+Após executar estes comandos, a aplicação pode ser acessada em seu navegador por meio do link https://localhost:3000.
