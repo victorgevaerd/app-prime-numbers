@@ -59,7 +59,7 @@ Ao desenvolver a aplicação digite no console/prompt de comandos o comando
 
 no diretório **client** e, no diretório **server**, digite o comando
 
-`py src\app.py`
+`python src\app.py`
 
 A partir de então a aplicação estará disponível, para acessar, use o navegador e digite o endereço https://localhost:3000.
 
@@ -75,4 +75,4 @@ Em seguida, para executar a aplicação em modo produção digite
 
 Por fim, entre no diretório **server** e digite
 
-`py src\app.py`
+`python src\app.py`
